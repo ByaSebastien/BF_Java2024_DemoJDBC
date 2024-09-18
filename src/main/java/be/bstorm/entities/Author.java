@@ -3,7 +3,7 @@ package be.bstorm.entities;
 import java.time.LocalDate;
 
 public class Author {
-    private int id;
+    private Integer id;
     private String firstname;
     private String lastname;
     private LocalDate birthdate;

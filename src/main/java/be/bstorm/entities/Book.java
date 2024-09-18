@@ -6,27 +6,17 @@ public class Book {
     private String isbn;
     private String title;
     private String description;
-    private LocalDate publicationDate;
-    private int authorId;
-    private Author author;
+    private LocalDate release_date;
+    private int author_id;
 
     public Book(){}
 
-    private Book(String isbn, String title, String description, LocalDate publicationDate) {
+    public Book(String isbn, String title, String description, LocalDate release_date, int author_id) {
         this.isbn = isbn;
         this.title = title;
         this.description = description;
-        this.publicationDate = publicationDate;
-    }
-
-    public Book(String isbn, String title, String description, LocalDate publicationDate, int authorId) {
-        this(isbn, title, description, publicationDate);
-        this.authorId = authorId;
-    }
-
-    public Book(String isbn, String title, String description, LocalDate publicationDate, Author author) {
-        this(isbn, title, description, publicationDate, author.getId());
-        this.author = author;
+        this.release_date = release_date;
+        this.author_id = author_id;
     }
 
     public String getIsbn() {
@@ -53,28 +43,20 @@ public class Book {
         this.description = description;
     }
 
-    public LocalDate getPublicationDate() {
-        return publicationDate;
+    public LocalDate getRelease_date() {
+        return release_date;
     }
 
-    public void setPublicationDate(LocalDate publicationDate) {
-        this.publicationDate = publicationDate;
+    public void setRelease_date(LocalDate release_date) {
+        this.release_date = release_date;
     }
 
-    public int getAuthorId() {
-        return authorId;
+    public int getAuthor_id() {
+        return author_id;
     }
 
-    public void setAuthorId(int authorId) {
-        this.authorId = authorId;
-    }
-
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
+    public void setAuthor_id(int author_id) {
+        this.author_id = author_id;
     }
 
     @Override
@@ -83,9 +65,8 @@ public class Book {
                 "isbn='" + isbn + '\'' +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", publicationDate=" + publicationDate +
-                ", authorId=" + authorId +
-                ", author=" + author +
+                ", publicationDate=" + release_date +
+                ", authorId=" + author_id +
                 '}';
     }
 }
